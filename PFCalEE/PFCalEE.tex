@@ -5,6 +5,11 @@
 \ifthenelse{\boolean{cms@external}}{\setlength\cmsFigWidth{0.85\columnwidth}}{\setlength\cmsFigWidth{0.4\textwidth}}
 \ifthenelse{\boolean{cms@external}}{\providecommand{\cmsLeft}{top}}{\providecommand{\cmsLeft}{left}}
 \ifthenelse{\boolean{cms@external}}{\providecommand{\cmsRight}{bottom}}{\providecommand{\cmsRight}{right}}
+\providecommand{\Geant}{\textsc{Geant}}
+\providecommand{\Xnot}{${\rm X}_0$}
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
 
 %%%%%%%%%%%%%%%  Title page %%%%%%%%%%%%%%%%%%%%%%%%
 \cmsNoteHeader{HGCal-EE} % This is over-written in the CMS environment: useful as preprint no. for export versions
@@ -53,8 +58,8 @@ the existing endcap calorimeter during the Phase-II upgrade of the CMS
 detector. This note describes in detail the implementation of the
 simulation of the electromagnetic calorimeter sub-detector of HGCal. 
 Physics performance studies are carried to illustrate the potential of
-the calorimeter in a high-pileup environemnt. A standalone
-simulation of a small detector unit in Geant4 is used to optimise the
+the calorimeter in a high-pileup environemnt. A stand-alone
+simulation of a small detector unit in \GEANT4 is used to optimise the
 design, and extract first information about electromagnetic showers:
 lateral and transverse shower profiles, energy and position resolutions.
 A digitisation module is described and its effects on the performance
@@ -92,7 +97,7 @@ pdfkeywords={CMS, upgrade, HGCAL}}
 % AM
 \input{standalone}
 % Pedro
-\input{CMSSW}
+\input{samplingemshowers}
 % Pedro
 \input{optimisation}
 % AM
