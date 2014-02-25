@@ -24,24 +24,27 @@ repository: \url{https://github.com/pfs/PFCal/}.
 \subsubsection{Geant4 setup}
 
 The detector construction is made of 30 sampling sections, each with
-the following parameters:
-\begin{table}{h!}
+the material detailed in table~\ref{tab:samplSec}.
+
+\begin{table}[h!]
+ \begin{center}
 \caption{\label{tab:samplSec} Thicknesses (in mm) for the different materials, per layer}
 \begin{tabular}{|l|c|c|c|c|c|}
 \hline
 Layers & Pb & Cu & Si & PCB & Air \\
 \hline
-1-10  & 1.63 & 3 & 0.2 & 1 & 2 \\
-11-20 & 3.32 & 3 & 0.2 & 1 & 2 \\
-21-30 & 5.56 & 3 & 0.2 & 1 & 2 \\
+0-9  & 1.63 & 3 & 0.2 & 1 & 2 \\
+10-19 & 3.32 & 3 & 0.2 & 1 & 2 \\
+20-29 & 5.56 & 3 & 0.2 & 1 & 2 \\
 \hline
 \end{tabular}
+\end{center}
 \end{table}
 
 Figure~\ref{fig:g4vis} shows an event display of a 50 GeV electron
 shower in two different geometries: a uniform 26 layers of 1 X$_0$
 each (left) and the baseline geometry detailed in
-table~\ref{tab:samplSec}.
+table~\ref{tab:samplSec} (right).
 
 \begin{figure}[h!]
   \begin{center}
@@ -56,13 +59,50 @@ table~\ref{tab:samplSec}.
   \end{center}
 \end{figure}
 
-The simulation uses the QGSP\_BERT physics list, with the default cuts
+The simulation uses the QGSP\_FTFP\_BERT physics list, with the default cuts
 for electrons, positrons and photons reduced to 10\,$\mu$m in the
-silicon. The default elsewhere is 700\,$\mu$m. With 700\,$\mu$m in Si,
+silicon. The default elsewhere is 1\,mm. With 700\,$\mu$m in Si,
 a 420 keV (5.8 keV) electron (photon) would deposit all its energy in
 one step. With the reduced 10\,$\mu$m, the energy threshold is 32 keV
 for electrons, and 990 eV for photons.
 
 
+\subsubsection{Energy calibration and resolution}
 
-\subsubsection{Energy resolution}
+Different methods are used to measure the total energy:
+\begin{itemize}
+\item raw energy: simply the sum of the energy deposited in Geant4 in
+  the silicon in the full detector volume (30 layers of $20 \times
+  20$\,cm$^2$).
+\item weighted energy: sum of the energy deposited in the Si, but
+  weighted differently according to which sampling section they belong
+  to. Simplest weights are the ratio of sampling thicknesses in X$_0$,
+  i.e. 1 for layers 0-9, 0.8/0.5 for layers 10-19 and 1.2/0.5 for
+  layers 20-29. Weights can also be optimised to minimise the energy
+  resolution for all energies.
+\item Fit of the shower profile: allowing for example to recover the
+  shower leakage for higher energies.
+\end{itemize}
+
+For the first two methods, the total energy is fitted, per incoming
+energy generated, by a gaussian. The mean is used for calibration, and
+the resolution is defined as the ratio of the width over the mean.
+
+The calibration curve is shown in Figure~\ref{fig:eCalib} left, for
+single electrons. Figure~\ref{fig:eCalib} right, shows the energy
+resolution as a function of the incoming energy. For incoming energies
+below 150 GeV, 2500 events have been generated, and 1250 above.
+
+%@TODO replace with Pedro's plots with all 3 methods in.
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=\cmsFigWidth]{figures/e_calibFit.pdf}
+    \includegraphics[width=\cmsFigWidth]{figures/e_resoFit.pdf}
+    \caption{Reconstructed energy as a function of the generated
+      energy E (left) and energy resolution as a function of
+      $\frac{1}{\sqrt{E}}$ (right), for single electron events.}
+    \label{fig:g4vis}
+  \end{center}
+\end{figure}
+
+
