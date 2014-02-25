@@ -1,137 +1,30 @@
---- COMMENTS may be placed outside the @ENTRYTYPE{ ... } stuctures
---- CMS guidelines
----- Every journal article citation should include the DOI, assuming one exists.
----- All URLs for CMS notes, ANs, etc, should refer to the CDS server, not the CMS server. Use our standard format for them, as shown below.
-----  CMS Notes not available on CDS are regarded as private and may not be cited.
-----  CMS physics papers (i.e., those intended for publication in journals) may reference only POG PASs, not PAG PASs.
----- For papers by collaborations, list the collaboration in the COLLABOROATION field and put the first author and "and others" in the AUTHOR field.
-----  If only the collaboration is listed as the author, put "{XXX Collaboration}" under AUTHOR.
-----  Note that we automatically replace the AUTHOR field with the collaboration name for ATLAS, CMS, LHCb, and ATLAS at submission time.
----- Other items:
-----   PAGES: Please only list the first page, not the range.
-----   ISSUE: Please do not include in most cases.
-----   URL: Do not include this field if a DOI is available.
----- Number of authors to list:
-----   PRL requests that we include all authors up to fifteen except for large collaborations, and we take this as our internal guide as well. If there
-----   are more than fifteen, just list the first author + "and others", as above.
-----   The individual journal bib style file (theirs, ours, PLB, etc.) will truncate at the appropriate point. We have ours set to _1_.
----- Use only the URL field instead of embedding an href (this is a change in our practice).
----- A reference only published on the arXiv should be listed as UNPUBLISHED (with a note "Submitted to XXX" for large collaboration papers).
-----   Experimental papers only on the arXiv and not submitted for publication may not be cited.
----- Some journals will lowercase the title: use {} to protect words which must be capitalized, e.g., {LHC}, {TeV}, {CERN}, {CMS}.
-----  Do not escape the entire title as it will then clash with the journal style.
----- Journal names: the journals generally include the series in the journal name, "Physical Review D", vol 5, rather than PR D5
-%
-% Notes hosted only on CDS are listed as TECHREPORTs.
-%
-@TECHREPORT{CMS_AN_2006-027,
-     AUTHOR       = "Belotelov, I. and Golutvin, I. and Bourilkov, D. and Lanyov, A. and Rogalev, E. and Savina, M. and Shmatov, S.",
-     TITLE        = "Search for {ADD} extra dimensional gravity in di-muon channel with the {CMS} Detector",
-     TYPE      = "CMS Note",
-     NUMBER       = "2006/076",
-     URL          = "http://cdsweb.cern.ch/record/962045",
-     YEAR         = "2006"}
-@TECHREPORT{CMS_NOTE_2006-106,
-     AUTHOR       = "Aldaya, M. and Arce, P. and Caballero, J. and de la Cruz, B. and Garcia-Abia, P. and Hernandez, J. M. and Josa, M. I. and Ruiz, E.",
-     TITLE        = "Discovery potential and search strategy for the Standard Model {H}iggs boson in the {$H\to ZZ^\star\to 4\mu$} decay channel using a mass-independent analysis",
-     TYPE      = "CMS Note",
-     NUMBER       = "2006/106",
-     URL          = "http://cdsweb.cern.ch/record/962058",
-     YEAR         = "2006"}
-%
-% standard article
-%
-@Article{Brandt:1997gi,
-     author    = "Brandt, A. and others",
- collaboration = "UA8",
-     title     = "Measurements of single diffraction at $\sqrt{s} =$ 630 {GeV}:
-                  Evidence for  a non-linear $\alpha(t)$ of the pomeron",
-     journal   = "Nucl. Phys. B",
-     volume    = "514",
-     year      = "1998",
-     pages     = "3",
-     SLACcitation  = "%%CITATION = HEP-EX 9710004;%%",
-     doi       = "10.1016/S0550-3213(97)00813-4"
-}
-@ARTICLE{Buchmuller:1986zs,
-     AUTHOR       = "Buchm{\"u}ller, W. and Wyler, D.",
-     TITLE        = "Constraints on {SU(5)}-type leptoquarks",
-     JOURNAL      = "Phys. Lett. B",
-     VOLUME       = "177",
-     YEAR         = "1986",
-     pages        = "377",
-     SLACcitation  = "%%CITATION = PHLTA,B191,442;%%",
-     doi          = "10.1016/0370-2693(86)90771-9"}
-@Article{PTDR2,
-     author    = "{CMS Collaboration}",
-     title     = "{CMS} technical design report, volume {II}: {Physics}
-                  performance",
-     journal   = "J. Phys. G",
-     volume    = "34",
-     year      = "2007",
-     pages     = "995-1579",
-     doi       = "10.1088/0954-3899/34/6/S01",
-     SLACcitation  = "%%CITATION = JPHGB,G34,995;%%"
-}
-% PAS are now TECHREPORTS. Same for Notes. A formatted list of PASs is located in [svn]/utils/branches/dev/general/pasBib-tech.bib
-@TECHREPORT{CMS-PAS-JME-10-003,
-      AUTHOR      = "{CMS Collaboration}",
-      COLLABORATION = {CMS},
-      TITLE       = "Jet Performance in pp Collisions at $\sqrt{s}$=7 {TeV}",
-      URL         = "http://cdsweb.cern.ch/record/1279362",
-      TYPE     = "CMS Physics Analysis Summary",
-      NUMBER      = "CMS-PAS-JME-10-003",
-      YEAR        = "2010"
-}
-%SPIRES had this one as R. Adolphi, et. al. Wrong. Now corrected in InspireHEP.
-@Article{Chatrchyan:2008zzk,
-     author    = "Chatrchyan, S. and others",
-     collaboration = "CMS",
-     title     = "The {CMS} experiment at the {CERN} {LHC}",
-     journal   = "JINST",
-     volume    = "3",
-     year      = "2008",
-     pages     = "S08004",
-     doi       = "10.1088/1748-0221/3/08/S08004",
-     SLACcitation  = "%%CITATION = JINST,3,S08004;%%"
-}
-%
-% An example of a document which only appears on arXiv. This one could alternatively be cited as a TECHREPORT using any of the various laboratory report numbers when hosted on a lab server:
-% reportNumber   = "CERN-PH-EP-2010-095, FERMILAB-TM-2480-PPD, LEPEWWG-2010-01, TEVEWWG-2010-01, ALEPH-2010-001-PHYSICS-2010-001, CDF-NOTE-10338, D0-NOTE-6130, DELPHI-DELPHI-2010-001-PHYS-952, L3-NOTE-2837, OPAL-PR432, SLAC-PUB-14301",
-%
-@Article{Sjostrand:2006za,
-      author         = "Sj{\"o}strand, Torbj{\"o}rn and Mrenna, Stephen and Skands, Peter",
-      title          = "{PYTHIA} 6.4 physics and manual",
-      journal        = "JHEP",
-      volume         = "05",
-      pages          = "026",
-      doi            = "10.1088/1126-6708/2006/05/026",
-      year           = "2006",
-      eprint         = "hep-ph/0603175",
-      archivePrefix  = "arXiv",
-      primaryClass   = "hep-ph",
-      reportNumber   = "FERMILAB-PUB-06-052-CD-T, LU-TP-06-13",
-      SLACcitation   = "%%CITATION = HEP-PH/0603175;%%",
+@ARTICLE{1610988, 
+author={Allison, J. and Amako, K. and Apostolakis, J. and Araujo, H. and Dubois, P.A. and Asai, M. and Barrand, G. and Capra, R. and Chauvie, S. and Chytracek, R. and Cirrone, G.A.P. and Cooperman, G. and Cosmo, G. and Cuttone, G. and Daquino, G.G. and Donszelmann, M. and Dressel, M. and Folger, G. and Foppiano, F. and Generowicz, J. and Grichine, V. and Guatelli, S. and Gumplinger, P. and Heikkinen, A. and Hrivnacova, I. and Howard, A. and Incerti, S. and Ivanchenko, V. and Johnson, T. and Jones, F. and Koi, T. and Kokoulin, R. and Kossov, M. and Kurashige, H. and Lara, V. and Larsson, S. and Lei, F. and Link, O. and Longo, F. and Maire, M. and Mantero, A. and Mascialino, B. and McLaren, I. and Lorenzo, P.M. and Minamimoto, K. and Murakami, K. and Nieminen, P. and Pandola, L. and Parlati, S. and Peralta, L. and Perl, J. and Pfeiffer, A. and Pia, M.G. and Ribon, A. and Rodrigues, P. and Russo, G. and Sadilov, S. and Santin, G. and Sasaki, T. and Smith, D. and Starkov, N. and Tanaka, S. and Tcherniaev, E. and Tome, B. and Trindade, A. and Truscott, P. and Urban, L. and Verderi, M. and Walkden, A. and Wellisch, J.P. and Williams, D.C. and Wright, D. and Yoshida, H.}, 
+journal={Nuclear Science, IEEE Transactions on}, 
+title={Geant4 developments and applications}, 
+year={2006}, 
+volume={53}, 
+%number={1}, 
+pages={270}, 
+keywords={Geant4;astrophysics;high energy physics;performance optimization;space science;physics computing;}, 
+doi={10.1109/TNS.2006.869826}, 
+ISSN={0018-9499}}
+
+@article{Agostinelli:2002hh,
+      author         = "Agostinelli, S. and others",
+      title          = "{GEANT4: A Simulation toolkit}",
+      collaboration  = "GEANT4",
+      journal        = "Nucl.Instrum.Meth.",
+      volume         = "A506",
+      pages          = "250-303",
+      doi            = "10.1016/S0168-9002(03)01368-8",
+      year           = "2003",
+      reportNumber   = "SLAC-PUB-9350, FERMILAB-PUB-03-339",
+      SLACcitation   = "%%CITATION = NUIMA,A506,250;%%",
 }
 
-@article{Agostinelli2003250,
-title = "Geant4—a simulation toolkit ",
-journal = "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment ",
-volume = "506",
-number = "3",
-pages = "250 - 303",
-year = "2003",
-note = "",
-issn = "0168-9002",
-doi = "http://dx.doi.org/10.1016/S0168-9002(03)01368-8",
-url = "http://www.sciencedirect.com/science/article/pii/S0168900203013688",
-author = "S. Agostinelli and J. Allison and K. Amako and J. Apostolakis and H. Araujo and P. Arce and M. Asai and D. Axen and S. Banerjee and G. Barrand and F. Behner and L. Bellagamba and J. Boudreau and L. Broglia and A. Brunengo and H. Burkhardt and S. Chauvie and J. Chuma and R. Chytracek and G. Cooperman and G. Cosmo and P. Degtyarenko and A. Dell'Acqua and G. Depaola and D. Dietrich and R. Enami and A. Feliciello and C. Ferguson and H. Fesefeldt and G. Folger and F. Foppiano and A. Forti and S. Garelli and S. Giani and R. Giannitrapani and D. Gibin and J.J. Gómez Cadenas and I. González and G. Gracia Abril and G. Greeniaus and W. Greiner and V. Grichine and A. Grossheim and S. Guatelli and P. Gumplinger and R. Hamatsu and K. Hashimoto and H. Hasui and A. Heikkinen and A. Howard and V. Ivanchenko and A. Johnson and F.W. Jones and J. Kallenbach and N. Kanaya and M. Kawabata and Y. Kawabata and M. Kawaguti and S. Kelner and P. Kent and A. Kimura and T. Kodama and R. Kokoulin and M. Kossov and H. Kurashige and E. Lamanna and T. Lampén and V. Lara and V. Lefebure and F. Lei and M. Liendl and W. Lockman and F. Longo and S. Magni and M. Maire and E. Medernach and K. Minamimoto and P. Mora de Freitas and Y. Morita and K. Murakami and M. Nagamatu and R. Nartallo and P. Nieminen and T. Nishimura and K. Ohtsubo and M. Okamura and S. O'Neale and Y. Oohata and K. Paech and J. Perl and A. Pfeiffer and M.G. Pia and F. Ranjard and A. Rybin and S. Sadilov and E. Di Salvo and G. Santin and T. Sasaki and N. Savvas and Y. Sawada and S. Scherer and S. Sei and V. Sirotenko and D. Smith and N. Starkov and H. Stoecker and J. Sulkimo and M. Takahata and S. Tanaka and E. Tcherniaev and E. Safai Tehrani and M. Tropeano and P. Truscott and H. Uno and L. Urban and P. Urban and M. Verderi and A. Walkden and W. Wander and H. Weber and J.P. Wellisch and T. Wenaus and D.C. Williams and D. Wright and T. Yamada and H. Yoshida and D. Zschiesche",
-keywords = "Simulation",
-keywords = "Particle interactions",
-keywords = "Geometrical modelling",
-keywords = "Software engineering",
-keywords = "Object-oriented technology",
-keywords = "Distributed software development "
+@techreport{HGCal,
+      author         = "V. Andreev and others",
+      title          = "{High-Granularity Calorimeter for the CMS Phase 2 Upgrade}",
+      journal        = "Draft"
 }
-
-

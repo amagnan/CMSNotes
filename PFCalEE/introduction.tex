@@ -1,18 +1,34 @@
+%
+%
+%
+\clearpage
 \section{Introduction}
 \label{sec:intro}
 
-Three alternatives have been proposed to replace the endcap
-calorimetry for the LHC upgrade towards high luminosity (2023 in the
-current timeline). In particular, a proposal of using a highly
-granular sampling calorimeter, using Si as sensitive material and
-probably lead as absorber, is being studied. This note concentrates on
-the electromagnetic part of such a design.
+It is now established that the CMS endcap calorimeters will have to be replaced for the high
+luminosity phase of LHC (HL-LHC). During the anticipated lifetime of
+the HL-LHC it is expected
+that an integrated luminosity of 3000\fbinv will be collected.
+Any calorimeter that is placed in the endcap region of CMS will need to be able to contend with both the very high level of pile-up
+events and the very high level of ionizing and neutron irradiation that will be associated with the
+high luminosity running. The design of the calorimeter needs to take these factors into account
+and below we explore an option of a sampling calorimeter based on silicon sensors for the active
+material with high granularity both longitudinally and laterally - HGCal.
+In particular we describe the studies carried for the optimization of
+the electromagnetic calorimeter sub-detector of HGCal which is
+required to have good electormagnetic resolution as a crucial input to
+the full jet reconstruction in the forward region.
+More details on the HGCal project can be found in~\cite{HGCal}.
 
-In section~\ref{sec:setup}, the geometry of the baseline design is
-detailed, as implemented in a standalone Geant4~\cite{Geant4}
-simulation, and within CMSSW. The impact on the energy resolution of
-using different silicon thicknesses, absorber materials, and sampling
-thicknesses is studied in section~\ref{sec:optim}. The digitisation
-procedure is explained in section~\ref{sec:digi}. More detailed
-studies of the performances, in ideal conditions and with pileup, are
-shown in section~\ref{sec:perf}.
+Our studies are presented as follows:
+in Sec.~\ref{sec:setup} the geometry of the baseline design is
+detailed using a stand-alone \GEANT4~\cite{1610988,Agostinelli:2002hh}
+simulation and a full integration in a upgrade scenario within \CMSSW;
+the impact on the energy resolution of using different detector
+configurations,
+including different silicon and sampling thicknesses or absorber
+materials is studied in Sec.~\ref{sec:optim};
+Finally, the digitisation procedure is explained in
+section~\ref{sec:digi}. 
+We conclude our manuscript by presenting detailed
+studies of the performances, in ideal conditions and with pileup, in Sec.~\ref{sec:perf}.
