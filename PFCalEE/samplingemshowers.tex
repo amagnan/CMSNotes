@@ -263,4 +263,157 @@ statistical fluctuations with respect to the central region.
 The generic properties of the evolution of the electromagnetic showers
 in the transverse plane can be studied by sampling uniformly each Si
 layer with a fine $2.5\times2.5\mm^2$ grid and counting the energy
-deposits in each cell.
+deposits in each cell. The raw energy counted without up-weighting it based on
+the per-sector weighting scheme described in the previous scheme.
+Figures~\ref{fig:showertrans} show the evolution of two showers in the
+transverse plane for incoming energies of 50\GeV and 150\GeV.
+Using the radial distance $\rho=\sqrt{x^2+y^2}$ with respect to the
+simulated electron beamline we can furthermore use these profiles to
+obtain the average energy deposited as function of the distance to the
+shower center as well as shower energy fraction contained within a
+given distance to the shower center.
+These results are illustrated, for the same incident energies, in
+Figures~\ref{fig:showertransavgen} and~\ref{fig:showertransavgenfrac}.
+One can observe that the showers are narrow being 90\% of the energy
+contained within 20\cm up to the shower maximum. After that the
+profile of the energy is less centered (halo-like) and the energy is
+spread over the plane. The 90\% radius tends to increase exponentially
+after each layer.
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{figures/cxysensorenhitsvsrE50}
+    \includegraphics[width=0.7\textwidth]{figures/cxysensorenhitsvsrE150}
+    \caption{Average evolution of electromagnetic showers in the transverse
+      plane for selected Si layers. The per-sector weights are applied
+      to the energy measured in MIP equivalents. Incoming electrons
+      with E=50\GeV (150\GeV) are shown on {\em top} ({\em bottom}).
+   }
+    \label{fig:showertrans}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{figures/csensorenhitsvsrE50}
+    \includegraphics[width=0.7\textwidth]{figures/csensorenhitsvsrE150}
+    \caption{Average energy deposited as function of the distance to
+      the shower center.  Incoming electrons
+      with E=50\GeV (150\GeV) are shown on {\em top} ({\em bottom}).
+     In the captions, the distances corresponding to the 68\% and 90\%
+    quantiles of the distributions are quoted.
+   }
+    \label{fig:showertransavgen}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{figures/cfracsensorenhitsvsrE50}
+    \includegraphics[width=0.7\textwidth]{figures/cfracsensorenhitsvsrE150}
+    \caption{Average energy fraction contained within a given distance
+      to the shower center. Incoming electrons
+      with E=50\GeV (150\GeV) are shown on {\em top} ({\em bottom}).
+      The blue and red lines mark the radius for which 68\% and 90\%
+      of the energy are contained, correspondingly.
+   }
+    \label{fig:showertransavgenfrac}
+  \end{center}
+\end{figure}
+
+Figure \ref{fig:showertranssummary} shows the evolution of the 68\%
+and 90\% containment radius as function of the layer as well as the
+dynamic energy range, \i.e. the average maximum energy deposited at
+each layer and the average energy expected to be observed at the 90\%
+containmnent radius.
+The ratio of the two energies is expected to be approximately
+similar for different incoming electron energies, indicating the
+scaling properties of the electromagnetic shower.
+
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.24\textwidth]{figures/cmolsensorenhitsvsrE10}
+    \includegraphics[width=0.24\textwidth]{figures/cmolsensorenhitsvsrE50}
+    \includegraphics[width=0.24\textwidth]{figures/cmolsensorenhitsvsrE100}
+    \includegraphics[width=0.24\textwidth]{figures/cmolsensorenhitsvsrE150}
+    \includegraphics[width=0.24\textwidth]{figures/cdynrangesensorenhitsvsrE10}
+    \includegraphics[width=0.24\textwidth]{figures/cdynrangesensorenhitsvsrE50}
+    \includegraphics[width=0.24\textwidth]{figures/cdynrangesensorenhitsvsrE100}
+    \includegraphics[width=0.24\textwidth]{figures/cdynrangesensorenhitsvsrE150}
+    \caption{
+{\em Top}: evolution of the distances expected to contain 68\% (blue) and
+90\% (red) of the shower energy, as function of the Si layer.
+{\em Bottom}: evolution of the average maximum energy deposited in
+each Si layer (red) and the average energy expected to be deposited at
+the 90\% containment radius. The bottom panel shows the ratio between
+the two energy ranges.
+From {\em left} to {\em right} incident electron energies of 10, 50,
+100 and 150\GeV are shown.
+   }
+    \label{fig:showertranssummary}
+  \end{center}
+\end{figure}
+
+
+From these results the Moli\`{e}re radius can be extracted, \ie the
+distance at which 90\% of the shower energy is expected to be
+contained. Figure~\ref{fig:showermoliere} summarizes the
+result obtained.
+We estimate the  Moli\`{e}re radius to be 25.5\mm
+and the 68\% containment radius to be 8.5\mm.
+If the air gap is increased to 4\mm (decreased to 1\mm) in the
+simulation the Moli\`{e}re radius is expected to increase to 31\mm (decrease to
+22\mm) and the 68\% containment radius is expected to increase to 10.5\mm
+(decrease to 7\mm).
+This yields a rate of the increase of the Moli\`{e}re radius
+of 2.9\mm per 1\mm of Air increased and a limit of 19.3\mm
+when no Air gap is present.
+
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{figures/cmolsensorenhitsvsr}
+    \caption{ Estimated Moli\'{e}re radius and radius for 68\%
+      containment of the electromagnetic shower energy.}
+    \label{fig:showermoliere}
+  \end{center}
+\end{figure}
+
+We conclude this section with a study on the expected impact on
+resolution from using isolated energy sums.
+For this purpose we count only the hits which fall within a distance
+$\rho$ of the shower center. The weighted energy estimator is obtained
+as described in the previous Section and the resolution of this
+estimator is evaluated in the same way.
+Table~\ref{tab:isoresol} summarizes the expected stochastic and
+constant terms of the resolution model when different radius are used.
+In the extreme case where only one single $2.5\times2.5\mm^2$ cell is
+used the stochastic term is expected to be degraded by 34\%.
+In a more realistic scenario where a range corresponding to the
+Moli\`{e}re radius is used this degradation is only 3\%.
+An intermediate approach, using a dynamical range where the first layers are integrated with
+smaller cone sizes and latter layers are integrated with larger cone,
+sizes following the expression $8.7\times e^{0.064\times {\rm layer}}$
+is expected to lead to a degradation on the resolution of the order of 9\%.
+These approaches will be explored in more detail in the presence of pileup.
+
+\begin{table}[h!]
+ \begin{center}
+\caption{\label{tab:isoresol} 
+Electron energy resolution parameters for different radius of energy
+integration. See text for details.
+}
+\begin{tabular}{lcc}
+\hline
+$\rho$ (\mm) & $\left(\frac{\sigma_{\rm E}}{\rm E}\right)_{\rm stoch}$ & $\left(\frac{\sigma_{\rm E}}{\rm E}\right)_{\rm cte}$ \\
+\hline\hline
+$\infty$ & $0.209\pm0.001$ & $0.0056\pm0.0001$\\
+2.5 & $0.280\pm0.001$ & $0.0130\pm0.0001$\\
+7 & $0.237\pm0.001$ & $0.0090\pm0.0001$\\
+25 & $0.216\pm0.001$ & $0.0069\pm0.0001$\\
+dynamical & $0.228\pm0.001$ & $0.0128\pm0.0001$\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
