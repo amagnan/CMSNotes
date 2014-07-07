@@ -1,0 +1,106 @@
+%\RequirePackage{lineno}
+%\documentclass[aps,prl,twocolumn,showpacs,groupedaddress]{revtex4}  % for review and submission
+%\usepackage{graphicx}  % needed for figures
+%\usepackage{dcolumn}   % needed for some tables
+%\usepackage{bm}        % for math
+%\usepackage{amssymb}   % for math
+
+%\usepackage{url}
+%\usepackage{appendix}
+%\usepackage{setspace}
+%\usepackage{xspace}
+%\usepackage{verbatim}
+%\usepackage{color}
+%\usepackage{lineno}
+
+
+% Customizable fields and text areas start with % >> below.
+% Lines starting with the comment character (%) are normally removed before release outside the collaboration, but not those comments ending lines
+
+% svn info. These are modified by svn at checkout time.
+% The last version of these macros found before the maketitle will be the one on the front page,
+% so only the main file is tracked.
+% Do not edit by hand!
+\RCS$Revision: 153561 $
+\RCS$HeadURL: svn+ssh://svn.cern.ch/reps/tdr2/papers/SMP-12-004/trunk/SMP-12-004.tex $
+\RCS$Id: SMP-12-004.tex 153561 2012-10-18 16:05:03Z gaultney $
+%%%%%%%%%%%%% local definitions %%%%%%%%%%%%%%%%%%%%%
+% This allows for switching between one column and two column (cms@external) layouts
+% The widths should  be modified for your particular figures. You'll need additional copies if you have more than one standard figure size.
+\newlength\cmsFigWidth
+\ifthenelse{\boolean{cms@external}}{\setlength\cmsFigWidth{0.85\columnwidth}}{\setlength\cmsFigWidth{0.4\textwidth}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsLeft}{top}}{\providecommand{\cmsLeft}{left}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsRight}{bottom}}{\providecommand{\cmsRight}{right}}
+%%%%%%%%%%%%  Title page %%%%%%%%%%%%%%%%%%%%%%%%
+\cmsNoteHeader{SMP-14-Vbb} % This is over-written in the CMS environment: useful as preprint no. for export versions
+% >> Title: please make sure that the non-TeX equivalent is in PDFTitle below
+%\title{Measurement of Z/gamma + jet angular distributions}
+
+%\begin{document}
+%\setpagewiselinenumbers
+%\modulolinenumbers[5]
+%\linenumbers
+
+\title{Production of a vector boson (W or Z) in association with one or more b quarks in proton-proton collisions at 8 TeV}
+
+
+% >> Authors
+%Author is always "The CMS Collaboration" for PAS and papers, so author, etc, below will be ignored in those cases
+%For multiple affiliations, create an address entry for the combination
+%To mark authors as primary, use the \author* form
+\address[neu]{Northeastern University}
+\address[fnal]{Fermilab}
+\address[cern]{CERN}
+\author[cern]{The CMS Collaboration}
+
+% >> Date
+% The date is in yyyy/mm/dd format. Today has been
+% redefined to match, but if the date needs to be fixed, please write it in this fashion.
+% For papers and PAS, \today is taken as the date the head file (this one) was last modified according to svn: see the RCS Id string above.
+% For the final version it is best to "touch" the head file to make sure it has the latest date.
+\date{\today}
+
+% >> Abstract
+% Abstract processing:
+% 1. **DO NOT use \include or \input** to include the abstract: our abstract extractor will not search through other files than this one.
+% 2. **DO NOT use %**                  to comment out sections of the abstract: the extractor will still grab those lines (and they won't be comments any longer!).
+% 3. **DO NOT use tex macros**         in the abstract: External TeX parsers used on the abstract don't understand them.
+\abstract{
+%\begin{abstract}
+Abstract
+}
+
+%\end{abstract}
+
+% >> PDF Metadata
+% Do not comment out the following hypersetup lines (metadata). They will disappear in NODRAFT mode and are needed by CDS.
+% Also: make sure that the values of the metadata items are sensible and are in plain text (no TeX! -- for \sqrt{s} use sqrt(s) -- this will show with extra quote marks in the draft version but is okay).
+
+\hypersetup{
+pdfauthor={A.-M. Magnan, S. de Visscher},
+pdftitle={Production of a vector boson (W or Z) in association with one or more b quarks in proton-proton collisions at 8 TeV},
+pdfsubject={CMS},
+pdfkeywords={CMS, physics, Z boson, W boson, B hadrons, b jets, angular distribution, QCD, perturbative test}
+}
+
+\maketitle 
+%maketitle comes after all the front information has been supplied
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{intro}
+\input{concl}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\clearpage
+
+%\end{document}
+
+
+\bibliography{auto_generated} 
+%\bibliographystyle{abbrv}
+%\bibliography{SMP-12-004prl}
+
+%\end{document}
