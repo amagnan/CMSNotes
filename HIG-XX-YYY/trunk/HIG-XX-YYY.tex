@@ -1,0 +1,487 @@
+% Customizable fields and text areas start with % >> below.
+% Lines starting with the comment character (%) are normally removed before release outside the collaboration, but not those comments ending lines
+
+% svn info. These are modified by svn at checkout time.
+% The last version of these macros found before the maketitle will be the one on the front page,
+% so only the main file is tracked.
+% Do not edit by hand!
+\RCS$Revision: 254481 $
+\RCS$HeadURL: svn+ssh://amagnan@svn.cern.ch/reps/tdr2/papers/HIG-13-030/trunk/HIG-13-030.tex $
+\RCS$Id: HIG-13-030.tex 254481 2014-08-05 10:54:09Z jbrooke $
+%%%%%%%%%%%%% local definitions %%%%%%%%%%%%%%%%%%%%%
+\newcommand{\METnomu}{\ensuremath{\MET\mathrm{no}\mu}}
+\newcommand{\mH}{\ensuremath{m_{\PH}}}
+\newcommand{\tauh}{\ensuremath{\Pgt_\mathrm{h}}\xspace}
+\newcommand{\mindphiall}{\ensuremath{\mathrm{min}\Delta\phi(\MET,\mathrm{j})}}
+\newcommand{\mindphij1j2}{\ensuremath{\mathrm{min}\Delta\phi(\MET,\mathrm{j1/j2})}}
+\newcommand{\METsig}{\ensuremath{\frac{\MET}{\sigma(\MET)}}}
+
+
+%\input{commands.tex}
+% This allows for switching between one column and two column (cms@external) layouts
+% The widths should  be modified for your particular figures. You'll need additional copies if you have more than one standard figure size.
+\newlength\cmsFigWidth
+\ifthenelse{\boolean{cms@external}}{\setlength\cmsFigWidth{0.95\columnwidth}}{\setlength\cmsFigWidth{0.8\textwidth}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsLeft}{top}}{\providecommand{\cmsLeft}{left}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsRight}{bottom}}{\providecommand{\cmsRight}{right}}
+%
+%%%%%%%%%%%%%% custom commands %%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%  Title page %%%%%%%%%%%%%%%%%%%%%%%%
+\cmsNoteHeader{HIG-XX-YYY} % This is over-written in the CMS environment: useful as preprint no. for export versions
+% >> Title: please make sure that the non-TeX equivalent is in PDFTitle below
+\title{Enhancing sensitivity in the search for invisible decays of Higgs bosons in the vector boson fusion production mode}
+
+% >> Authors
+%Author is always "The CMS Collaboration" for PAS and papers, so author, etc, below will be ignored in those cases
+%For multiple affiliations, create an address entry for the combination
+%To mark authors as primary, use the \author* form
+%\address[neu]{Northeastern University}
+%\address[fnal]{Fermilab}
+\address[cern]{CERN}
+\author[cern]{The CMS Collaboration}
+
+% >> Date
+% The date is in yyyy/mm/dd format. Today has been
+% redefined to match, but if the date needs to be fixed, please write it in this fashion.
+% For papers and PAS, \today is taken as the date the head file (this one) was last modified according to svn: see the RCS Id string above.
+% For the final version it is best to "touch" the head file to make sure it has the latest date.
+\date{\today}
+
+% >> Abstract
+% Abstract processing:
+% 1. **DO NOT use \include or \input** to include the abstract: our abstract extractor will not search through other files than this one.
+% 2. **DO NOT use %**                  to comment out sections of the abstract: the extractor will still grab those lines (and they won't be comments any longer!).
+% 3. For PASs: **DO NOT use tex macros**         in the abstract: CDS MathJax processor used on the abstract doesn't understand them _and_ will only look within $$. The abstracts for papers are hand formatted so macros are okay.
+\abstract{
+The sensitivity of the search for invisible decays of Higgs bosons in
+the vector boson fusion production mode is improved by analysing data
+recorded in 2012 at a centre-of-mass energy of 8\,TeV by the CMS
+detector with high-rate VBF-specific triggers. Limits are set on the
+production cross section times invisible branching fraction, as a
+function of the Higgs boson mass. Assuming standard model Higgs boson
+cross sections and acceptances, the observed (expected) upper limit on
+the invisible branching fraction at $m_\PH=125$\GeV is found to be
+0.XX\,(0.37) at 95\% confidence level.}
+
+% >> PDF Metadata
+% Do not comment out the following hypersetup lines (metadata). They will disappear in NODRAFT mode and are needed by CDS.
+% Also: make sure that the values of the metadata items are sensible and are in plain text:
+% (1) no TeX! -- for \sqrt{s} use sqrt(s) -- this will show with extra quote marks in the draft version but is okay).
+% (2) no %.
+% (3) No curly braces {}.
+\hypersetup{%
+pdfauthor={CMS Collaboration},%
+pdftitle={Enhancing the sensitivity in the search for invisible decays of Higgs bosons in the vector boson fusion production mode},%
+pdfsubject={CMS},%
+pdfkeywords={CMS, physics, Higgs}}
+
+\maketitle %maketitle comes after all the front information has been supplied
+% >> Text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Begin text %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% **DO NOT REMOVE THE BIBLIOGRAPHY** which is located before the appendix.
+%% You can take the text between here and the bibiliography as an example which you should replace with the actual text of your document.
+%% If you include other TeX files, be sure to use "\input{filename}" rather than "\input filename".
+%% The latter works for you, but our parser looks for the braces and will break when uploading the document.
+%%%%%%%%%%%%%%%
+
+
+%\tracinginput{introduction}
+\section{Introduction}
+
+The search for invisible decays of Higgs bosons has been extensively
+studied in the
+past~\cite{Searches:2001ab,Abdallah:2003ry,Abbiendi:2006gd}, and at
+the LHC with the full 7 and 8 TeV datasets, by both the
+CMS~\cite{Chatrchyan:2014tja} and ATLAS~\cite{Aad:2014iia,Aad:2013oja}
+collaborations. Assuming standard model Higgs boson cross sections and
+acceptances, the ATLAS collaboration places an upper limit on the
+invisible Higgs boson branching fraction of 0.75 at 95\% CL for
+$\mH=125.5$\GeV, using the associated ZH production
+mode~\cite{Aad:2014iia,Aad:2013oja}. By combining both vector boson
+fusion (VBF) and associated ZH production modes, the CMS collaboration
+is able to improve the sensitivity to an observed (expected) upper
+limit on the invisible branching fraction at $m_\PH=125$\GeV of
+0.58\,(0.44) at 95\% confidence level. An extensive introduction on
+the interest of such a search and an overview of the theoretical
+models proposing invisible decay channels of either standard-model
+like or heavier Higgs bosons can be found in
+Ref.~\cite{Chatrchyan:2014tja}.
+
+In this letter, the sensitivity of the VBF analysis is improved
+significantly through selection criteria better suited at
+discriminating signal and backgrounds. The main driver of the
+improvement is given at the trigger level, with the use of alternative
+triggers that were put in place in 2012 and are detailed in the
+following paragraph. The total integrated luminosity re-analysed is
+$19.2 \pm 0.5$ fb$^{-1}$~\cite{CMS-PAS-LUM-13-001}.
+
+% overview
+The central feature of the CMS apparatus is a superconducting solenoid
+of 6\unit{m} internal diameter, providing a magnetic field of
+3.8\unit{T}. Within the volume of the superconducting solenoid are a
+silicon pixel and strip tracker, a lead tungstate crystal
+electromagnetic calorimeter (ECAL), and a brass-scintillator hadron
+calorimeter, each composed by the barrel and endcap detectors. Muons
+are measured with detection planes made using three technologies:
+drift tubes, cathode strip chambers, and resistive-plate chambers,
+embedded in the steel flux-return yoke outside the solenoid. Extensive
+forward calorimetry complements the coverage provided by the barrel
+and endcap detectors. Data are selected online using a two-level
+trigger system. The first level (L1T), consisting of custom made
+hardware processors, selects events in less than 1\mus, while the
+high-level trigger (HLT) processor farm further decreases the event
+rate from around 100\unit{kHz} to a few hundred Hz before data
+storage. A more detailed description of the CMS apparatus, together
+with a definition of the coordinate system used and the relevant
+kinematic variables, can be found in Ref.~\cite{Chatrchyan:2008aa}.
+
+In 2012, two parallel data-taking streams were put in place, in order
+to make full use of the maximum storage rate available. In addition to
+the standard so-called "prompt" scheme, looser versions of specific
+triggers were divised and recorded on disk at data-taking time. This
+alternate scheme is referred to as "parked" scheme. Whereas the prompt
+data were available immediately for analysis, the parked data were
+reconstructed later on in 2013 during the long shutdown of the
+LHC.
+
+%not mandatory anymore
+%The CMS experiment uses a right-handed coordinate system, with the
+%origin at the nominal interaction point, the $x$ axis pointing to the
+%center of the LHC, the $y$ axis pointing up (perpendicular to the LHC
+%plane), and the $z$ axis along the counterclockwise-beam
+%direction. The polar angle $\theta$ is measured from the positive $z$
+%axis and the azimuthal angle $\phi$ is measured in the $x$-$y$ plane.
+%The pseudorapidity, $\eta$, is defined as $- \ln [\tan(\theta/2)]$. 
+
+The analysis presented here follows the same first-level selection,
+object definitions, and MC samples as described in
+Ref~\cite{Chatrchyan:2014tja}.
+
+ The VBF signal is simulated using the \POWHEG 2.0 event
+generator~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2009je,Hamilton:2009za,Nason:2009ai,Alioli:2010xd,Re:2010bp}. The
+VBF production cross sections are taken from
+Refs.~\cite{Dittmaier:2011ti,Dittmaier:2012vm}. The main background
+processes, namely W, Z, and $\ttbar$ produced in association with
+jets, are simulated using \MADGRAPH 5.1.1~\cite{Alwall:2011uj}
+interfaced with \PYTHIA 6.4.26~\cite{Sjostrand:2006za}. The QCD
+multijet background is simulated with \PYTHIA
+6.4.26~\cite{Sjostrand:2006za}. Detector effects are then simulated
+using the \GEANTfour package~\cite{Agostinelli:2002hh}. All MC samples
+are reweighted event-by-event to reproduce the distribution of minimum
+bias interactions (pileup) observed in data. 
+
+%Additional weights are applied to simulated events to
+%ensure trigger efficiency, lepton identification efficiency, and
+%b-tagging efficiency match measurements from data.\par}
+
+Electrons, muons, jets and transverse missing energy are reconstructed
+with a particle-flow
+algorithm~\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001}. Pileup
+mitigation techniques are in place to correct the objects, as
+described in detail in Ref~\cite{Chatrchyan:2014tja}.
+
+Electrons (muons) are selected in the pseudorapidity range
+$\abs{\eta}< 2.4 (2.1)$ and with p$_T> 10$\,GeV. For electrons, the
+$1.44 < \abs{\eta}< 1.57$ transition region between the ECAL barrel
+and endcap is excluded. Different isolation and identification
+criteria are used depending on whether the lepton is explicitely
+required (control regions with tight requirements and p$_T> 20$\,GeV)
+or vetoed (signal selection with looser requirements). A loose
+isolation requirement is still applied for veto leptons, implying that
+leptons in jets will a priori not be removed. Hadronic taus are
+identified with specific discriminants leading to an expected
+efficiency of 55\% for a fake rate less than 3\%, for taus with
+p$_{T}>20$\,GeV and $|\eta|<2.3$. MC samples are reweighted
+event-by-event to match the lepton reconstruction, identification and
+isolation efficiencies measured in data.
+
+Jets are clustered using the anti-\kt clustering
+algorithm~\cite{Cacciari:2008gp}, with a distance parameter of 0.5, as
+implemented in the \textsc{fastjet}
+package~\cite{Cacciari:fastjet1,Cacciari:fastjet2}. Jets are selected
+in the pseudorapidity range $\abs{\eta}< 4.7$ and with
+p$_T>30$\,GeV. Jet energy corrections are
+applied~\cite{Chatrchyan:2011ds}, as well as identification criteria
+to remove contributions from calorimeter noise or from pileup
+interactions. Jets with a veto electron or a loose muon within $\Delta
+R < 0.5$ are filtered out.
+
+Once all particle-flow objects are identified, the negative vectorial
+sum of their transverse momenta is used to define the missing
+transverse energy \MET and azimuthal angle $\phi_{\MET}$. A second
+quantity $\METnomu$ is defined by ignoring any identified tight muon:
+$\METnomu = \MET+\sum{\vec{p}_T^{\mathrm{tight}\,\mu}}$. The
+associated azimuthal angle is referred to as $\phi_{\METnomu}$. Jet
+energy corrections (including effects from pileup) are propagated to
+the \MET and $\METnomu$ objects.
+
+The same analysis strategy as in Ref.~\cite{Chatrchyan:2014tja} is
+used. Jets from VBF production have the particularities of being well
+separated in $\eta$, in opposite forward/backward halves of the
+detector, and of having a high invariant mass. Final states with two
+VBF jets and large missing transverse energy are hence selected.
+
+Among the VBF-specific triggers, the unprescaled versions with the
+loosest selection criteria are used, leading to three different
+versions corresponding to three data-taking period with different
+trigger menus. All three rely on the selection of L1T \MET$>40$\,GeV
+(calorimeter-based only, so equivalent to \METnomu). The first trigger
+is the same as the prompt trigger used in
+Ref.~\cite{Chatrchyan:2008aa}, and selects, among all possible jet
+pairs to minimise the impact of pileup, at least one pair of PF jets
+with p$_T$ thresholds of 40\,GeV, $\METnomu>65$\,GeV, dijet invariant
+mass M$_{jj}>800$\,GeV and dijet pseudorapidity difference
+$\Delta\eta_{jj}>3.5$. The two parked triggers select a pair of
+calorimeter jets with p$_T$ thresholds of 35 (30)\,GeV,
+M$_{jj}>700$\,GeV and $\Delta\eta_{jj}>3.5$. To take into account the
+correlations between the different variables, the efficiency of each
+trigger is measured as a function of \MET in bins of M$_{jj}$ and
+p$_T^{j2}$, using events recorded by a single-muon trigger. The
+efficiency is then applied event-by-event to the MC samples as the
+luminosity-weighted average of the three efficiencies.
+
+After applying the triggers, the data sample is dominated by QCD
+multijet events. Multijet events have two very distinct origins: (1)
+events with fake \MET: the \MET comes from mismeasured jets in the
+events; and (2) events with genuine \MET: \MET comes from the decay of
+hadrons involving neutrinos, in particular heavy-flavour decays. The
+fake-\MET contribution can be reduced by requiring the \MET
+significance \METsig, defined as the ratio of the vectorial over
+scalar sums of the transverse energy of the reconstructed PF
+candidates, to be large enough. The genuine-\MET component can be
+reduced by isolating the \MET, by requiring that no jet with p$_T>30$
+GeV be reconstructed within $\Delta\phi=2$ of the \MET direction.
+
+The trigger requirements together with reducing the QCD multijet
+contribution to negligible levels drive the choice of the following
+selection:
+\begin{equation}
+  \label{eq:sel}
+  \begin{aligned}
+    &\eta_{j1} \cdot \eta_{j2}<0,\, \eta_{j1,2}<4.7,\\
+    &\text{jet\,1}\, p_{T}>50 \,\text{GeV},\, \text{jet\,2}\, p_{T}>40\,\text{GeV},\\
+    &\Delta\eta_{jj}>3.6, \,\text{GeV},\, M_{jj}>1000 \,\text{GeV}, \\ 
+    &\text{METnomu}>90\,\text{GeV},\\
+    & \mindphiall > 2.0,\,\METsig>4.
+  \end{aligned}
+\end{equation}
+
+At this stage in the selection, the background processes leading to a
+similar final state are, by order of decreasing importance: the
+associated production of W and Z with jets, QCD multijet production,
+all top channels (\ttbar, single top and tW channels), dibosons, and
+Drell--Yan$(\ell\ell)\text{+jets}$. The selection is further optimised
+based on the final 95\% C.L. limit on the Higgs branching fraction to
+invisible. An optimal point is found for $\mindphiall > 2.3$,
+p$_{T}^{j2}>45$\,GeV and M$_{jj}>1200$\,GeV.
+
+Except for the very minor dibosons and DY contributions which are
+directly taken from MC, all other backgrounds are normalised to the
+data using specific independent control regions. The control regions
+are made by selecting either exactly one lepton (electron, muon or
+hadronic tau), exactly two muons, or exactly one electron and one
+muon, in order to enrich the sample in W, Z and top events
+respectively. All other requirements are kept identical to the signal
+selection when the statistics is high enough. In the top control
+region, to gain statistics and because the QCD multijet background is
+negligible, the requirement on \mindphiall is dropped. In the
+W$\rightarrow\tau_{\mathrm{h}}\nu$ control region, the criteria on
+the \mindphiall is loosen to 1, and an additional requirement on the
+transverse mass of the W is used to reject the small remaining QCD
+contribution. Based on the high-statistics W$\rightarrow\mu\nu$
+region, a 20\% systematic uncertainty is added to cover the small
+discrepancy in shape of the \mindphiall variable observed between data
+and MC. Figure~\ref{fig:vbfCR} shows the data-MC agreement that is
+obtained in the $\mindphiall$ variable in each of the control regions.
+
+\begin{figure*}[hbtp]
+\begin{center} 
+\includegraphics[width=0.49\textwidth]{figures/enu_alljetsmetnomu_mindphi.pdf}
+\includegraphics[width=0.49\textwidth]{figures/munu_alljetsmetnomu_mindphi.pdf}
+\includegraphics[width=0.49\textwidth]{figures/taunu_alljetsmetnomu_mindphi.pdf}
+\includegraphics[width=0.49\textwidth]{figures/mumu_alljetsmetnomu_mindphi.pdf}
+\includegraphics[width=0.49\textwidth]{figures/top_alljetsmetnomu_mindphi.pdf}
+\caption{Distribution of the $\mindphiall$ variable in the data and MC, after reweighting the MC to match the data in normalisation. Top row, from left to right: W$\rightarrow e,\mu,\tau_{\mathrm{h}}$ control regions. Bottom row: left, Z$\rightarrow\mu\mu$ and top control regions.}
+\label{fig:vbfCR} 
+\end{center}
+\end{figure*}
+
+Using the normalisation from the control regions, the final number of
+events for each process that pass the selection are estimated using
+the MC, and summarised in Table~\ref{tab:bgSummary}. An overview of
+all considered systematic uncertainties is given in
+Table~\ref{tab:syst-qqH}, separately for the sum of all the background
+processes and the signal with $\mH=125$\GeV and $\BRinv=100$\%.
+
+\begin{table*}[th!]
+	\centering \caption{Summary of the estimated number of
+		background and signal events, together with the
+		observed yield, in the VBF search signal region.  The
+		signal yield is given for $\mH=125$\GeV and
+		$\BRinv=100$\%.}  \label{tab:bgSummary}
+
+\begin{tabular}{lc}
+\hline \hline
+Process & Event yields \\
+\hline
+$Z\rightarrow\nu\nu$&$157.315 \pm 37.5734\pm 38.2847$\\
+$W\rightarrow\mu\nu$&$101.017 \pm 6.11334\pm 11.6106$\\
+$W\rightarrow e\nu$&$54.7915 \pm 7.01662\pm 6.03872$\\
+$W\rightarrow\tau\nu$&$98.525 \pm 13.2759\pm 25.1965$\\
+top&$4.43021 \pm 0.980423\pm 1.4235$\\
+VV&$3.83666 \pm 0\pm 0.701872$\\
+QCD multijet &$17\pm 0 \pm14$\\
+\hline
+Total Background &$436.916 \pm 40.9338 \pm 54.9131$\\
+\hline
+Signal(VBF)&$ 273.375 \pm 0 \pm 31.1987$\\
+Signal(ggH)&$ 22.5697 \pm 0 \pm 15.6106$\\
+\hline \hline 
+\end{tabular}
+\end{table*}
+
+\begin{table*}[h!t]
+\centering
+\topcaption{Summary of the uncertainties in the total background and signal yields. All uncertainties affect the normalization of the yield, and are quoted as the change in \% in the total background or signal estimate, when each systematic effect is varied according to its uncertainties. The signal uncertainties are given for $\mH=125$\GeV and $\BRinv=100$\%.}
+\label{tab:syst-qqH}
+\begin{tabular}{lcc}
+\hline \hline
+Source	& Total background & Signal	\\
+\hline
+lumi & 0.0228312 & 2.6 \\
+eff e & 0.500796 & 0 \\
+eff m & 2.15781 & 0 \\
+scale j & 4.99668 & 10.6951 \\
+res j & 2.8708 & 1.81018 \\
+scale met & 1.84967 & 1.6387 \\
+puweight & 0.940233 & 1.55523 \\
+zvv norm & 4.15921 & 0 \\
+zvv stat & 0 & 0 \\
+wmu norm & 1.8255 & 0 \\
+wmu stat & 0 & 0 \\
+wel norm & 1.2069 & 0 \\
+wel stat & 0 & 0 \\
+tau eff & 1.80401 & 0 \\
+tau extrapfacunc & 4.51002 & 0 \\
+wtau norm & 2.76291 & 0 \\
+wtau stat & 0 & 0 \\
+zvv extrapfacunc & 7.20116 & 0 \\
+top norm & 0.297641 & 0 \\
+top stat & 0 & 0 \\
+qcd norm & 0 & 0 \\
+vv norm & 0.11539 & 0 \\
+vv xsunc & 0.00614687 & 0 \\
+qqH norm & 0 & 3.12626 \\
+QCDscale qqH & 0 & 0.184747 \\
+pdf qqbar & 0 & 2.49409 \\
+ggH norm & 0 & 2.18767 \\
+QCDscale ggH2in & 0 & 4.21737 \\
+pdf gg & 0 & 0.861777 \\
+UEPS & 0 & 1.28123 \\
+\hline \hline
+\end{tabular}
+\end{table*}
+
+The dominant systematic uncertainties come from the statistical
+uncertainty on the number of data events in each of the control
+regions. In order to estimate the effect of the jet energy scale,
+unclustered energy scale and jet energy resolution on both the signal
+and background processes, each quantity is varied separately by their
+uncertainties in both direction and the full background estimation is
+repeated. Similarly, the pileup and lepton efficiency scale factors
+applied to the MC are varied by their uncertainties in both
+directions. The luminosity uncertainty of 2.6\% and the trigger
+efficiency uncertainty are applied only to the signal and to the minor
+backgrounds estimated purely from MC. The data-driven normalisation
+for the main backgrounds ensures that the trigger plateau is properly
+taken into account. The uncertainties on the diboson cross sections
+are taken from the CMS published cross-section
+measurements~\cite{Chatrchyan:2013oev}.
+
+Further uncertainties come from the theoretical uncertainty on the
+cross-section ratio used to extrapolate from QCD produced
+$Z/\gamma^{*}\rightarrow\mu\mu$ to $Z\rightarrow\nu\nu$ in the
+$Z\rightarrow\nu\nu$ background estimation. This uncertainty is
+estimated by calculating the ratio of yields obtained from both MCFM
+and MadGraph in a VBF dominated region for both processes. The MCFM
+NLO result is found to be 1.14, while MadGraph gives $1.2\pm0.2$
+resulting in a 20\% uncertainty on the $Z\rightarrow\nu\nu$ estimate
+to account for this difference. Theoretical uncertainties on the
+signal cross-sections due to PDF and QCD scales are taken from the LHC
+Higgs Cross Section Working Groups Yellow Report
+3~\cite{Dittmaier:2011ti,Dittmaier:2012vm}.
+
+Upper limits on the Higgs boson production cross section times
+invisible branching fraction are placed at 95\% C.L. using an
+asymptotic CLs method\cite{Read1,junkcls,LHC-HCG}, following the
+standard CMS Higgs combination technique implemented using the
+standard CMS Higgs combination tool. The tool takes as input datacards
+with the yields for each process and "nuisance parameters" which
+represent the systematic uncertainties in each yield and their
+correlations. The datacards are set up to consider 6 background
+processes ($Z\rightarrow\nu\nu,\,W\rightarrow\mu\nu,\,W\rightarrow
+e\nu,\,W\rightarrow\tau\nu$, top quark production and diboson
+production) and 2 signal processes (VBF and gluon fusion production of
+a Higgs boson decaying invisibly). Each systematic summarised in
+Table~\ref{tab:syst-qqH} is included with its own log-normal
+probability density function (PDF), except when multiple uncorrelated
+systematics affect a single process, in which case the sources are
+combined into one datacard entry.
+
+Using this procedure and assuming standard model Higgs boson
+kinematics, the expected 95\% C.L. limit on the invisible branching
+fraction of a SM 125 GeV Higgs boson is 37\%. The 95\% C.L. limit on
+the invisible branching fraction of a SM Higgs boson and the 95\%
+C.L. limit on the cross-section times invisible branching fraction are
+shown as a function of Higgs boson mass in figure \ref{fig:limits}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.49\textwidth]{figures/vbflimit.pdf}
+    \includegraphics[width=0.49\textwidth]{figures/vbfxslimit.pdf}
+ \caption{The 95\% C.L. limit on the invisible branching fraction of a SM Higgs
+boson (\cmsLeft) and the 95\% C.L. limit on the cross-section times
+invisible branching fraction (\cmsRight)as a function of the Higgs
+boson mass.}
+    \label{fig:limits}
+  \end{center}
+\end{figure}
+
+
+
+
+%conclusion
+The VBF Higgs to invisible analysis sensitivity is improved
+significantly by using a different trigger recorded as part of the
+parked data scheme. Using a selection driven by enhancing the
+contribution from \MET coming from genuine invisible particles and
+isolated from jet activity in the transverse plane, rather than
+mismeasured energy or \MET from heavy-flavoured jet decays, the
+expected 95\% C.L. limit is improved by more than 20\% compared to the
+published analysis, with a new expected limit on the branching
+ratio of a standard model Higgs to invisible at 37\% (compared to
+49\%).
+
+
+
+% >> acknowledgements (for journal papers)
+% Please include the latest version from https://twiki.cern.ch/twiki/bin/viewauth/CMS/Internal/PubAcknow.
+\section*{Acknowledgements}
+{\tolerance=900 
+
+We congratulate our colleagues in the CERN accelerator departments for the excellent performance of the LHC and thank the technical and administrative staffs at CERN and at other CMS institutes for their contributions to the success of the CMS effort. In addition, we gratefully acknowledge the computing centres and personnel of the Worldwide LHC Computing Grid for delivering so effectively the computing infrastructure essential to our analyses. Finally, we acknowledge the enduring support for the construction and operation of the LHC and the CMS detector provided by the following funding agencies: BMWFW and FWF (Austria); FNRS and FWO (Belgium); CNPq, CAPES, FAPERJ, and FAPESP (Brazil); MES (Bulgaria); CERN; CAS, MoST, and NSFC (China); COLCIENCIAS (Colombia); MSES and CSF (Croatia); RPF (Cyprus); MoER, ERC IUT and ERDF (Estonia); Academy of Finland, MEC, and HIP (Finland); CEA and CNRS/IN2P3 (France); BMBF, DFG, and HGF (Germany); GSRT (Greece); OTKA and NIH (Hungary); DAE and DST (India); IPM (Iran); SFI (Ireland); INFN (Italy); MSIP and NRF (Republic of Korea); LAS (Lithuania); MOE and UM (Malaysia); CINVESTAV, CONACYT, SEP, and UASLP-FAI (Mexico); MBIE (New Zealand); PAEC (Pakistan); MSHE and NSC (Poland); FCT (Portugal); JINR (Dubna); MON, RosAtom, RAS and RFBR (Russia); MESTD (Serbia); SEIDI and CPAN (Spain); Swiss Funding Agencies (Switzerland); MST (Taipei); ThEPCenter, IPST, STAR and NSTDA (Thailand); TUBITAK and TAEK (Turkey); NASU and SFFR (Ukraine); STFC (United Kingdom); DOE and NSF (USA).
+
+\par}
+%% **DO NOT REMOVE BIBLIOGRAPHY**
+\bibliography{auto_generated}   % will be created by the tdr script.
+
+%% examples of appendices. **DO NOT PUT \end{document} at the end
+%\clearpage
+%\appendix
+%\section{PTDR Symbol Definitions\label{app:symdef}}
+
+%%% DO NOT ADD \end{document}!
+
