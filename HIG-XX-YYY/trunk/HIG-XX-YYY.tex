@@ -239,8 +239,8 @@ fake \MET contribution can be reduced by requiring the \MET
 significance \METsig, defined as the ratio of the vectorial over
 scalar sums of the transverse energy of the reconstructed PF
 candidates, to be large. Both components can be
-reduced by isolating the \MET, by requiring that no jet with p$_T>30$
-GeV be reconstructed close to the \MET in azimuthal angle.
+reduced by isolating the \MET, by requiring that the minimum azimuthal angle separation
+between any reconstructed jet with p$_T>30$ GeV and the \MET, \mindphiall, be large.
 
 The trigger requirements together with reducing the QCD multijet
 contribution to negligible levels drive the choice of the following
@@ -263,11 +263,12 @@ all top channels (\ttbar, single top and tW channels), dibosons, and
 Drell--Yan$(\ell\ell)\text{+jets}$. The selection is further optimised
 by tightening the requirements listed above to find the best 95\% C.L. expected limit on \BRinv for a \mH=125 GeV Higgs boson.
  The optimal additional selection is found to be $\mindphiall > 2.3$,
-p$_{T}^{j2}>45$\,GeV and M$_{jj}>1200$\,GeV.
+p$_{T}^{j2}>45$\,GeV and M$_{jj}>1200$\,GeV, and these requirements along with those above are used to define the signal region.
 
 Except for the very minor dibosons and DY contributions which are
 directly taken from MC, all other backgrounds are normalised to the
-data using independent control regions. Where there are enough events the control regions are the same as the signal region
+data using independent control regions. In the case of the W, Z and top with jets processes, where there are enough 
+events the control regions are the same as the signal region
 except that the lepton veto is replaced by a requirement for either exactly one lepton (electron, muon or
 hadronic tau), exactly two muons, or exactly one electron and one
 muon, in order to enrich the sample in W, Z or top events
@@ -293,9 +294,15 @@ obtained in the $\mindphiall$ variable in each of the control regions.
 \end{center}
 \end{figure*}
 
+%!!QCD DISCRIPTION
+The QCD multijet process is modelled using the sample of events where the isolation requirement on the \MET has been reversed by requiring that \mindphiall$<$1.0 but still requiring that the minimum azimuthal angle separation between the leading two jets and the \MET, \mindphileading, be greater than 2.3. We normalise these events in a sideband region to the signal region, which is dominated by QCD.
+The region chosen is that with 3$<$\METsig$<$4 and 1.0$<$\mindphileading$<$2.0. It is observed that the normalisation factor has a strong dependence on \METsig and \mindphiall. To model this behaviour the normalisation factor is measured both as a function of the cut placed on \METsig and as a function of the cut placed on \mindphiall. Both functional forms are then extrapolated to the signal region cut values, and the final normalisation factor is taken to be the centre of the envelope formed by the two values obtained.
+
 The final number of events for each process that passes the selection is estimated using
-the MC with the normalisation obtained from the control regions, and is summarised in Table~\ref{tab:bgSummary}. The distribution of the $\mindphiall$ variable in the signal region, with all backgrounds taking their final normalisation is shown in Figure~\ref{fig:vbfSR}. An overview of
-all considered systematic uncertainties is given in
+the MC in the case of the W, Z and top with jets processes, or the non-isolated \MET events for the QCD multijets process,
+ with the normalisation obtained from the control regions, and is summarised in Table~\ref{tab:bgSummary}. 
+The distribution of the $\mindphiall$ variable in the signal region, with all backgrounds taking their final normalisation
+ is shown in Figure~\ref{fig:vbfSR}. An overview of all considered systematic uncertainties is given in
 Table~\ref{tab:syst-qqH}, with the effect on the sum of all the background
 processes and the signal with $\mH=125$\GeV and $\BRinv=100$\% given separately.
 
@@ -306,22 +313,22 @@ processes and the signal with $\mH=125$\GeV and $\BRinv=100$\% given separately.
 		signal yield is given for $\mH=125$\GeV and
 		$\BRinv=100$\%. The errors quoted are the statistical and systematic uncertainties respectively}  \label{tab:bgSummary}
 
-\begin{tabular}{lc}
-\hline \hline
+\begin{tabular}{lc}   
+\hline \hline                                    
 Process & Event yields \\
-\hline
-$Z\rightarrow\nu\nu$&$157 \pm 38\pm 38$\\
-$W\rightarrow\mu\nu$&$101 \pm 6\pm 12$\\
-$W\rightarrow e\nu$&$55 \pm 7\pm 6$\\
-$W\rightarrow\tau\nu$&$99 \pm 13\pm 25$\\
-top&$4.4 \pm 1.0\pm 1.4$\\
-VV&$3.8 \pm 0\pm 0.7$\\
+\hline                 
+$Z\rightarrow\nu\nu$&$157.3 \pm 37.6 \pm 38.3$\\
+$W\rightarrow\mu\nu$&$101.7 \pm 6.1 \pm 11.7$\\
+$W\rightarrow e\nu$&$55.6 \pm 7.1 \pm 6.1$\\
+$W\rightarrow\tau\nu$&$98.5 \pm 13.3 \pm 25.2$\\
+top&$4.4 \pm 1.0 \pm 1.4$\\
+VV&$3.8 \pm 0.0 \pm 0.7$\\
 QCD multijet &$17\pm 0 \pm14$\\
 \hline
-Total Background &$436.916 \pm 40.9338 \pm 54.9131$\\
+Total Background &$438.5 \pm 40.9 \pm 55.0 $\\
 \hline
-Signal(VBF)&$ 273.375 \pm 0 \pm 31.1987$\\
-Signal(ggH)&$ 22.5697 \pm 0 \pm 15.6106$\\
+Signal(VBF) &$273.4 \pm 0.0 \pm 31.2 $\\
+Signal(ggH) &$22.6 \pm 0.0 \pm 15.6 $\\
 \hline \hline 
 \end{tabular}
 \end{table*}
@@ -342,36 +349,36 @@ Signal(ggH)&$ 22.5697 \pm 0 \pm 15.6106$\\
 \hline \hline
 Source	& Total background & Signal	\\
 \hline
-lumi & 0.0228312 & 2.6 \\
-eff e & 0.500796 & 0 \\
-eff m & 2.15781 & 0 \\
-scale j & 4.99668 & 10.6951 \\
-res j & 2.8708 & 1.81018 \\
-scale met & 1.84967 & 1.6387 \\
-puweight & 0.940233 & 1.55523 \\
-zvv norm & 4.15921 & 0 \\
-zvv stat & 0 & 0 \\
-wmu norm & 1.8255 & 0 \\
-wmu stat & 0 & 0 \\
-wel norm & 1.2069 & 0 \\
-wel stat & 0 & 0 \\
-tau eff & 1.80401 & 0 \\
-tau extrapfacunc & 4.51002 & 0 \\
-wtau norm & 2.76291 & 0 \\
-wtau stat & 0 & 0 \\
-zvv extrapfacunc & 7.20116 & 0 \\
-top norm & 0.297641 & 0 \\
-top stat & 0 & 0 \\
-qcd norm & 0 & 0 \\
-vv norm & 0.11539 & 0 \\
-vv xsunc & 0.00614687 & 0 \\
-qqH norm & 0 & 3.12626 \\
-QCDscale qqH & 0 & 0.184747 \\
-pdf qqbar & 0 & 2.49409 \\
-ggH norm & 0 & 2.18767 \\
-QCDscale ggH2in & 0 & 4.21737 \\
-pdf gg & 0 & 0.861777 \\
-UEPS & 0 & 1.28123 \\
+Luminosity & 0.02 & 2.60 \\ 
+Electron efficiency & 0.50 & 0.00 \\ 
+Muon efficiency & 2.15 & 0.00 \\ 
+Jet energy scale & 5.00 & 10.70 \\ 
+Jet energy resolution & 2.87 & 1.81 \\ 
+Unclustered energy scale & 1.85 & 1.64 \\ 
+Pileup weight & 0.94 & 1.56 \\ 
+$Z\rightarrow\nu\nu$ MC stat. & 4.14 & 0.00 \\ 
+$Z\rightarrow\nu\nu$ data stat. & 8.57 & 0.00 \\ 
+$W\rightarrow \mu\nu$ MC stat. & 1.83 & 0.00 \\ 
+$W\rightarrow \mu\nu$ data stat. & 1.40 & 0.00 \\ 
+$W\rightarrow e\nu$ MC stat. & 1.22 & 0.00 \\ 
+$W\rightarrow e\nu$ data stat. & 1.61 & 0.00 \\ 
+Tau efficiency & 1.80 & 0.00 \\ 
+$W\rightarrow\tau\nu$ control region extrapolation & 4.49 & 0.00 \\ 
+$W\rightarrow\tau\nu$ MC stat. & 2.75 & 0.00 \\ 
+$W\rightarrow\tau\nu$ data stat. & 3.03 & 0.00 \\ 
+$Z/\gamma^{*}\rightarrow\mu\mu$ to $Z\rightarrow\nu\nu$ extrapolation & 7.18 & 0.00 \\ 
+Top MC stat. & 0.30 & 0.00 \\ 
+Top data stat. & 0.22 & 0.00 \\ 
+QCD normalisation & 0.00 & 0.00 \\ 
+VV MC stat. & 0.11 & 0.00 \\ 
+VV cross-section & 0.01 & 0.00 \\ 
+VBF MC stat. & 0.00 & 3.13 \\ 
+VBF QCD scale & 0.00 & 0.18 \\ 
+VBF pdf & 0.00 & 2.49 \\ 
+ggH MC stat. & 0.00 & 2.19 \\ 
+ggH QCD scale & 0.00 & 4.22 \\ 
+ggH pdf & 0.00 & 0.86 \\ 
+UEPS & 0.00 & 1.28 \\ 
 \hline \hline
 \end{tabular}
 \end{table*}
