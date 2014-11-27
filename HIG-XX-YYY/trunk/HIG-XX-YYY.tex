@@ -279,7 +279,7 @@ transverse mass of the W be greater than 20 GeV is used to reject the small rema
 contribution. By studying the W$\rightarrow\mu\nu$ region (which has enough events to observe the full range of the \mindphiall distribution), 
 a 20\% systematic uncertainty is added to the W$\rightarrow\tau_{\mathrm{h}\nu}$ background estimate cover the small
 discrepancy in shape of the \mindphiall variable observed between data
-and MC. Figure~\ref{fig:vbfCR} shows the data-MC agreement that is
+and MC. Figure~\ref{fig:vbfplots} shows the data-MC agreement that is
 obtained in the $\mindphiall$ variable in each of the control regions.
 
 \begin{figure*}[hbtp]
@@ -289,20 +289,22 @@ obtained in the $\mindphiall$ variable in each of the control regions.
 \includegraphics[width=0.49\textwidth]{figures/taunu_alljetsmetnomu_mindphi.pdf}
 \includegraphics[width=0.49\textwidth]{figures/mumu_alljetsmetnomu_mindphi.pdf}
 \includegraphics[width=0.49\textwidth]{figures/top_alljetsmetnomu_mindphi.pdf}
-\caption{Distribution of the $\mindphiall$ variable in the data and MC, after reweighting the MC to match the data in normalisation. Top row, from left to right: W$\rightarrow e,\mu,\tau_{\mathrm{h}}$ control regions. Bottom row: left, Z$\rightarrow\mu\mu$ and top control regions.}
-\label{fig:vbfCR} 
+\includegraphics[width=0.49\textwidth]{figures/nunu_alljetsmetnomu_mindphi.pdf}
+\caption{Distribution of the $\mindphiall$ variable in the data and MC, after reweighting the MC to match the data in normalisation. Top row, from left to right: W$\rightarrow e,\mu$ control regions. Middle row from left to right: W$\rightarrow\tau_{\mathrm{h}}$, Z$\rightarrow\mu\mu$ control regions. Bottom row from left to right: top control region, signal region. All plots have the W, Z and top backgrounds normalised to the date in their respective control regions} %!!REPLACE WITH UNBLIND VERSION WHEN WE UNBLIND
+\label{fig:vbfplots} 
 \end{center}
 \end{figure*}
 
+
 %!!QCD DISCRIPTION
 The QCD multijet process is modelled using the sample of events where the isolation requirement on the \MET has been reversed by requiring that \mindphiall$<$1.0 but still requiring that the minimum azimuthal angle separation between the leading two jets and the \MET, \mindphileading, be greater than 2.3. We normalise these events in a sideband region to the signal region, which is dominated by QCD.
-The region chosen is that with 3$<$\METsig$<$4 and 1.0$<$\mindphileading$<$2.0. It is observed that the normalisation factor has a strong dependence on \METsig and \mindphiall. To model this behaviour the normalisation factor is measured both as a function of the cut placed on \METsig and as a function of the cut placed on \mindphiall. Both functional forms are then extrapolated to the signal region cut values, and the final normalisation factor is taken to be the centre of the envelope formed by the two values obtained.
+The region chosen is that with 3$<$\METsig$<$4 and 1.0$<$\mindphileading$<$2.0. It is observed that the normalisation factor decreases rapidly as the cuts on \METsig and \mindphiall are tightened. To model this behaviour the normalisation factor is measured both as a function of the cut placed on \METsig and as a function of the cut placed on \mindphiall. Both functional forms are then extrapolated to the signal region cut values, and as the two variables are correlated the final normalisation factor is taken to be the centre of the envelope formed by the two values obtained.
 
 The final number of events for each process that passes the selection is estimated using
 the MC in the case of the W, Z and top with jets processes, or the non-isolated \MET events for the QCD multijets process,
  with the normalisation obtained from the control regions, and is summarised in Table~\ref{tab:bgSummary}. 
 The distribution of the $\mindphiall$ variable in the signal region, with all backgrounds taking their final normalisation
- is shown in Figure~\ref{fig:vbfSR}. An overview of all considered systematic uncertainties is given in
+ is shown in Figure~\ref{fig:vbfplots}. An overview of all considered systematic uncertainties is given in
 Table~\ref{tab:syst-qqH}, with the effect on the sum of all the background
 processes and the signal with $\mH=125$\GeV and $\BRinv=100$\% given separately.
 
@@ -333,14 +335,6 @@ Signal(ggH) &$22.6 \pm 0.0 \pm 15.6 $\\
 \end{tabular}
 \end{table*}
 
-\begin{figure*}[hbtp]
-\begin{center} 
-\includegraphics[width=0.49\textwidth]{figures/nunu_alljetsmetnomu_mindphi.pdf}
-\caption{Distribution of the $\mindphiall$ variable in the data and MC in the signal region, with the W, Z and top backgrounds normalised to the data in their respective control regions} %!!REPLACE WITH UNBLIND VERSION WHEN WE UNBLIND
-\label{fig:vbfSR} 
-\end{center}
-\end{figure*}
-
 \begin{table*}[h!t]
 \centering
 \topcaption{Summary of the uncertainties on the total background and signal yields. All uncertainties affect the normalization of the yield, and are quoted as the change in \% in the total background or signal estimate, when each systematic effect is varied according to its uncertainties. The signal uncertainties are given for $\mH=125$\GeV and $\BRinv=100$\%.}
@@ -350,35 +344,17 @@ Signal(ggH) &$22.6 \pm 0.0 \pm 15.6 $\\
 Source	& Total background & Signal	\\
 \hline
 Luminosity & 0.02 & 2.60 \\ 
-Electron efficiency & 0.63 & 0.00 \\ 
-Muon efficiency & 2.61 & 0.00 \\ 
+Lepton ID efficiency & 3.22 & 0.00 \\
 Jet energy scale & 4.94 & 10.70 \\ 
 Jet energy resolution & 2.86 & 1.81 \\ 
 Unclustered energy scale & 2.28 & 1.64 \\ 
-Pileup weight & 0.95 & 1.56 \\ 
-$Z\rightarrow\nu\nu$ MC stat. & 4.13 & 0.00 \\ 
-$Z\rightarrow\nu\nu$ data stat. & 8.54 & 0.00 \\ 
-$W\rightarrow \mu\nu$ MC stat. & 1.90 & 0.00 \\ 
-$W\rightarrow \mu\nu$ data stat. & 1.40 & 0.00 \\ 
-$W\rightarrow e\nu$ MC stat. & 1.34 & 0.00 \\ 
-$W\rightarrow e\nu$ data stat. & 1.66 & 0.00 \\ 
-Tau efficiency & 1.78 & 0.00 \\ 
+Pileup weight & 0.95 & 1.56 \\
+MC stat. & 5.54 & 3.82 \\ 
+Control region data stat. & 9.30 & 0.00 \\
 $W\rightarrow\tau\nu$ control region extrapolation & 4.46 & 0.00 \\ 
-$W\rightarrow\tau\nu$ MC stat. & 2.85 & 0.00 \\ 
-$W\rightarrow\tau\nu$ data stat. & 3.00 & 0.00 \\ 
 $Z/\gamma^{*}\rightarrow\mu\mu$ to $Z\rightarrow\nu\nu$ extrapolation & 7.16 & 0.00 \\ 
-Top MC stat. & 0.30 & 0.00 \\ 
-Top data stat. & 0.22 & 0.00 \\ 
-QCD normalisation & 0.00 & 0.00 \\ 
-VV MC stat. & 0.11 & 0.00 \\ 
-VV cross-section & 0.01 & 0.00 \\ 
-VBF MC stat. & 0.00 & 3.13 \\ 
-VBF QCD scale & 0.00 & 0.18 \\ 
-VBF pdf & 0.00 & 2.49 \\ 
-ggH MC stat. & 0.00 & 2.19 \\ 
-ggH QCD scale & 0.00 & 4.22 \\ 
-ggH pdf & 0.00 & 0.86 \\ 
-UEPS & 0.00 & 1.28 \\
+QCD normalisation & 3.18 & 0.00 \\ 
+Theory Uncertainty & 0.01 & 5.14\\
 \hline \hline
 \end{tabular}
 \end{table*}
